@@ -1,0 +1,30 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner.input = new Scanner (system.in);
+        double[] Currency = {10000,50000,20000,10000,5000,2000,1000,500,200,100};
+        int i = 0;
+        int j = 0;
+        int f=1;
+        double amountMoney;
+        
+        system.out.println("Enter Currency");
+        double amountMoney = input.nextDouble();
+        
+        for (j=0; j==f; j++) {
+            double remainderMoney = amountMoney % Currency[i];
+            if (remaindeyMoney != 0) {
+                system.out.println("The amount of" + Currency[i] +" that consists on your money is" + remainderMoney +" .");
+                i++;
+                f++;
+            }
+            else if (remainderMoney < 100) {
+             system.out.println("You also have a very, not important small changes") ;  
+            } else {
+                f = f-1;}
+            }
+        }
+    }
+}
