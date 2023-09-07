@@ -46,27 +46,27 @@ public class App {
         System.out.println("Enter how much money ? ");
         int amountMoney = scan.nextInt();
 
-        for (j = 0; j != f; j++) {
+        for (j = 0; j != f;) {
+            int remainderMoney;
             int dividedMoney = amountMoney / Currency[i];
             if (dividedMoney == 0) {
-                dividedMoney = amountMoney % Currency[i];
+                i++;
             } else if (dividedMoney > 0) {
                 System.out.println(
                         "The amount of " + Currency[i] + " that consists on your money is " + dividedMoney + " .");
-                int remainderMoney = amountMoney % Currency[i];
-                if (remainderMoney == 0) {
-                    j = j + 2;
-                    break;
-                } else if (remainderMoney > 0) {
+                dividedMoney = 0;
+                remainderMoney = amountMoney % Currency[i];
+                System.out.println("The remainder is " + remainderMoney);
+                if (remainderMoney > 0) {
+                    amountMoney = amountMoney % Currency[i];
                     i++;
+                    f++;
+                    j++;
+                    System.out.println("The Currency is now " + Currency[i]);
+                } else if (remainderMoney == 0 || dividedMoney < 100) {
+                    break;
                 }
             }
-            // if (remainderMoney == 0) {
-            // i = i++;
-            // } else if (dividedMoney > 0) {
-            // System.out.println("Check remainderMoney" + dividedMoney);
-            // }
-            // i = i++;
         }
     }
 
