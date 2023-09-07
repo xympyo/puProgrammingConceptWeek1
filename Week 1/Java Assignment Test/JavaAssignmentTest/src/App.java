@@ -12,28 +12,21 @@ public class App {
     public static void numberTwo(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter how much do you wish to loan?");
-        double loanAmount = scan.nextDouble();
+        int loanAmount = scan.nextInt();
         System.out.println("Enter how many years? ");
-        double numberOfYears = scan.nextDouble();
+        int numberOfYears = scan.nextInt();
         System.out.println("Enter your Interest Rate");
-        double interestRate = scan.nextDouble();
+        int interestRate = scan.nextInt();
 
-        double totalManyYears = numberOfYears * 12.0;
-        double monthlyPayment = loanAmount / totalManyYears;
-        double interestTax = ((loanAmount / interestRate) * 100);
-        double fullPayment = monthlyPayment * totalManyYears;
-        double monthlyFullPayment = monthlyPayment + interestTax;
-        double totallFullPayment = monthlyFullPayment * totalManyYears;
-
-        System.out.println("Your Monthly Payment (Tax Included) will be "
-                + monthlyFullPayment + " and your total Payment (Tax Included) will be " + totallFullPayment + " .");
-
-        System.out.println("Do you wish to see your Monthly and Total Payment without Tax? (1 for Yes, 2 for No)");
-        double answer = scan.nextInt();
-        if (answer == 1) {
-            System.out.println("Your monthly Payment without Tax will be " + monthlyPayment
-                    + " and your whole Payment without tax will be " + fullPayment);
-        }
+        int convertYears = numberOfYears * 12;
+        double monthlyPayment = loanAmount / convertYears;
+        System.out.println("Your monthly will be " + monthlyPayment);
+        double interestTax = (loanAmount / interestRate);
+        System.out.println("Your Tax will be " + interestTax + " per month");
+        double monthlyPaymentTax = monthlyPayment + interestTax;
+        System.out.println("Your monthly with tax will be " + monthlyPaymentTax);
+        double totalPaymentTax = monthlyPaymentTax * convertYears;
+        System.out.println("Your whole payment with tax will be " + totalPaymentTax + " .");
     }
 
     public static void numberThree(String[] args) {
@@ -71,6 +64,6 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
-        numberThree(args);
+        numberTwo(args);
     }
 }
