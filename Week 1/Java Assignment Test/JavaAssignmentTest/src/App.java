@@ -21,9 +21,10 @@ public class App {
         int convertYears = numberOfYears * 12;
         double monthlyPayment = loanAmount / convertYears;
         System.out.println("Your monthly will be " + monthlyPayment);
-        double interestTax = (loanAmount / interestRate);
-        System.out.println("Your Tax will be " + interestTax + " per month");
-        double monthlyPaymentTax = monthlyPayment + interestTax;
+        double interestTax = ((loanAmount / 100) * interestRate);
+        double wholeInterestTax = interestTax / convertYears;
+        System.out.println("Your Tax will be " + wholeInterestTax + " per month");
+        double monthlyPaymentTax = monthlyPayment + wholeInterestTax;
         System.out.println("Your monthly with tax will be " + monthlyPaymentTax);
         double totalPaymentTax = monthlyPaymentTax * convertYears;
         System.out.println("Your whole payment with tax will be " + totalPaymentTax + " .");
